@@ -127,7 +127,7 @@ function listUser() {
 function loadUser() {
     var sort = document.getElementById('selectedSort');
     sort.value = ""
-    fetch("http://jsonplaceholder.typicode.com/users").then(
+    fetch("https://jsonplaceholder.typicode.com/users").then(
         (resp) => {
             return resp.json();
         }).then((data) => {
