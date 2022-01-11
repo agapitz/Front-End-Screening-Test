@@ -2,7 +2,11 @@ var userList
 var fullList
 var isSort = false;
 var isAsc = true;
-
+var imgList = ["https://picsum.photos/id/1/400/300", "https://picsum.photos/id/1001/400/300",
+    "https://picsum.photos/id/1004/400/300", "https://picsum.photos/id/1008/400/300",
+    "https://picsum.photos/id/1027/400/300", "https://picsum.photos/id/1006/400/300",
+    "https://picsum.photos/id/1005/400/300", "https://picsum.photos/id/129/400/300",
+    "https://picsum.photos/id/177/400/300", "https://picsum.photos/id/1012/400/300"]
 function searchUser() {
     var text = document.getElementById('searchTxt')
     this.userList = this.fullList.filter(data => {
@@ -38,7 +42,7 @@ function listUser() {
         i++;
         div.innerHTML += ` <div class="col-md-4" style="margin-top:30px">
         <div class="col-md-12">
-            <div class="card h-100">
+            <div class="card h-100"  style="border:none">
                 <div class="row">
                     <div class="col-md-12 col-6 d-sm-none d-md-block d-none d-sm-block">
                         <img src="${info.img}" id="profileIMG"
@@ -48,37 +52,39 @@ function listUser() {
                         <div class="card-body">
                             <p class="card-title h5">${info.name}</p>
                             <p class="text-muted">@${info.username}</p>
-                            <p class="text-info h6">${'"' + info.company.catchPhrase + '"'}</p>
-                            <div class="media">
-                                <div class="media-left">
-                                    <i class="bi bi-envelope"></i>
-                                </div>
-                                <div class="media-body">
-                                    ${info.email}
-                                </div>
-                            </div>
+                            <p class="text-info">${'"' + info.company.catchPhrase + '"'}</p>
+                           
                         </div>
                     </div>
-                    <div class="col-md-12 col-6 d-block d-sm-none">
-                        <img src="https://picsum.photos/400/300?random=1" id="profileIMG"
-                            class="card-img-top img-fluid rounded">
+                    <div class="col-md-12 col-6 d-block d-sm-none" style="padding-top:10px;padding-right:20px">
+                        <img src="${info.img}" id="profileIMG"
+                            class="img-fluid rounded">
                     </div>
-                    <div class="col-md-12 col-6 d-none d-sm-block d-md-none">
-                        <img src="https://picsum.photos/400/300?random=1" id="profileIMG"
-                            class="card-img-top img-fluid rounded">
+                    <div class="col-md-12 col-6 d-none d-sm-block d-md-none" style="padding-top:10px;padding-right:20px">
+                        <img src="${info.img}" id="profileIMG"
+                            class="img-fluid rounded">
                     </div>
-                    <div class="row">
+                    </div>
+                    <div class="row"  style="margin-top:-30px">
                         <div class="col-md-12">
                             <div class="card-body">
+                            <div class="media">
+                            <div class="media-left">
+                                <i class="bi bi-envelope"></i>
+                            </div>
+                            <div class="media-body">
+                                ${info.email}
+                            </div>
+                        </div>
                                 <div class="media">
                                     <div class="media-left">
                                         <i class="bi bi-geo-alt"></i>
                                     </div>
                                     <div class="media-body">
                                         ${info.address.street + ',' + info.address.suit + ',' + info.address.zipcode
-                                        +
-                                        ',' +
-                                        info.address.geo.lat + ',' + info.address.geo.lng}
+            +
+            ',' +
+            info.address.geo.lat + ',' + info.address.geo.lng}
                                     </div>
                                 </div>
                                 <div class="media">
@@ -114,7 +120,7 @@ function listUser() {
                                         ${info.company.bs}
                                     </div>
                                 </div>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>
@@ -134,8 +140,8 @@ function loadUser() {
             this.userList = data;
             var i = 0;
             this.userList.forEach(info => {
+                info.img = imgList[i]
                 i++;
-                info.img = 'https://picsum.photos/400/300?random=' + i
             });
             this.fullList = this.userList
             sortUser();

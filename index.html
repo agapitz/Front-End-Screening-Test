@@ -2,6 +2,12 @@
 <html lang="en">
 
 <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
     <title>Front-End Screening Test</title>
 
     <!-- Bootstrap core CSS -->
@@ -29,20 +35,20 @@
 
 </head>
 
-<body>
+<body style="background-color: #F2F5FA;">
 
     <header>
-        <div class="row" style="margin-bottom: 100px;"></div>
+        <div class="row" style="height: 50px;margin-bottom: 50px;background-color: #fff;"></div>
     </header>
-    <div class="container">
+    <div class="container" style="background-color: #F2F5FA;">
 
         <div class="row" style="margin-bottom: 50px;">
-            <div class="col-md-5 col-12">
-                <input class="form-control" type="text" id="searchTxt" onkeydown="searchUser()"
-                    onkeypress="searchUser()" onkeyup="searchUser()">
+            <div class="col-md-5 col-12" style="margin-top: 10px;">
+                <input placeholder="Find customers" class="form-control" type="text" id="searchTxt"
+                    onkeydown="searchUser()" onkeypress="searchUser()" onkeyup="searchUser()">
             </div>
             <div class="col-md-4 col-6"></div>
-            <div class="col-md-3 col-6">
+            <div class="col-md-3 col-6" style="margin-top: 10px;">
                 <select placeholder="Sort" class="form-control" id="selectedSort" onchange="changeSort()">
                     <option value="" disabled selected>Sort By</option>
                     <option value="1">Name (A-Z)</option>
@@ -51,9 +57,14 @@
             </div>
         </div>
 
-       <div class="row" id="userList"></div>
+        <div class="row" id="userList">
 
-        <script src="assets/js/main.js"></script>
+          
+
+        </div>
+
+    </div>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

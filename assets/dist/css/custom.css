@@ -31,6 +31,7 @@
   .media-body {
     display: table-cell;
     vertical-align: top;
+    font-size: 14px;
   }
   .media-middle {
     vertical-align: middle;
@@ -45,4 +46,10 @@
   .media-list {
     padding-left: 0;
     list-style: none;
+  }
+  .text-info{
+    font-size: 15px !important;
+  }
+  .text-muted{
+    font-size: 14px !important;
   }
